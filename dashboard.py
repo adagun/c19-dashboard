@@ -185,7 +185,7 @@ def update_region_figure(selected_region):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
 
     # todo add multiple regions to chart, group by region
     # todo fix styling
