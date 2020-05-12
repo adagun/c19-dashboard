@@ -1,13 +1,10 @@
 # coding=utf-8
 
 import pandas as pd
-import numpy as np
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import dash_table as dt
-import dash_daq as daq
-from dash.dependencies import Input, Output, State
+from dash.dependencies import Input, Output
 import plotly.express as px
 import json
 
@@ -29,7 +26,7 @@ style = {
     'color': colors['text'],
     'background-color': colors["background"]
 }
-choropleth_style = {'margin': 'left 100px right 300px'}
+choropleth_style = {'margin': '0 auto'}
 
 plotly_template = "plotly"
 
@@ -166,7 +163,7 @@ def create_layout():
             ], className="container"),
             html.Footer(children=info, style={'margin': 'left 100px right 100px', 'font-size': '11px'},
                         className="bottom-text")
-        ], className="container", style={"max-width": "2000px"})
+        ], className="container", style={"max-width": "2000"})
     ], style=style)
 
 
