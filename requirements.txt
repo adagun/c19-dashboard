@@ -6,3 +6,4 @@ dash_core_components==1.10.0
 numpy==1.13.3
 pandas==1.0.3
 plotly==4.7.0
+xlrd==1.1.0

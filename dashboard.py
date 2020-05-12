@@ -8,11 +8,6 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import json
 
-external_scripts = [{
-    'type': 'text/javascript',
-    'src': 'insert your addthis.com js here',
-}]
-
 ######################################
 # styling
 ######################################
