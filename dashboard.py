@@ -165,7 +165,7 @@ def create_layout():
 ######################################
 # layout
 ######################################
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets, external_scripts=external_scripts)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.title = 'Sverige - Covid-19 Dashboard'
 server = app.server
 
