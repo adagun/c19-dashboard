@@ -49,10 +49,10 @@ with open(r'data/sweden.geojson') as f:
     geojson = json.load(f)
 
 ######################################
-# Graph config
+# Graphs config
 ######################################
 config = {'displaylogo': False, "displayModeBar": False, "scrollZoom": False,
-          'locale': 'se', 'responsive': True}
+          'locale': 'se', 'responsive': True, 'staticPlot': True}
 
 
 ######################################
