@@ -32,6 +32,27 @@
     z-index: 1002;
 }*/
 
+@media screen and (max-width: 1024px){
+    body {
+       zoom: 50%;
+        font-size: 125%;
+
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        zoom: 35%;
+        font-size: 150%;
+    }
+    footer{
+        height: 100px;
+        background-color: #ffd8ab;
+    }
+}
+
+
 /*
 #############################################################################################
   custom classes
@@ -45,16 +66,17 @@
 
 .region-graph{
   text-align: center;
-  max-Width: 650px;
+  max-Width: 1280px;
 }
 
 
 /* text-top
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
  .text-top {
-   background-color: #DEB887;
+   background-color: #fff0df;
    margin: 0 auto;
    margin-top: 10px;
+   margin-bottom: 10px;
    padding-top: 10px;
    padding-bottom: 10px;
    width: 800px;
@@ -164,6 +186,7 @@ body {
   font-family: "Lucida Console", "Monaco", "monospace";
   color: rgb(50, 50, 50);
   margin: 0;
+
 }
 
 
@@ -441,7 +464,11 @@ there.
 @media (min-width: 750px) {}
 
 /* Larger than desktop */
-@media (min-width: 1000px) {}
+@media (min-width: 1024px) {
+    body{
+        zoom: 80%;
+    }
+}
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}

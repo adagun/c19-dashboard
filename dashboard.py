@@ -13,7 +13,7 @@ import json
 ######################################
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 colors = {
-    'background': '#FFE4C4',
+    'background': '#ffd8ab',
     'text': '#000000'
 }
 style = {
@@ -21,7 +21,7 @@ style = {
     'color': colors['text'],
     'background-color': colors["background"]
 }
-choropleth_style = {'margin': '0 auto'}
+choropleth_style = {'margin': '25px'}
 
 plotly_template = "plotly"
 
@@ -51,7 +51,8 @@ with open(r'data/sweden.geojson') as f:
 ######################################
 # Graph config
 ######################################
-config = {'displaylogo': False, "displayModeBar": False, "scrollZoom": False, 'locale': 'se'}
+config = {'displaylogo': False, "displayModeBar": False, "scrollZoom": False,
+          'locale': 'se', 'responsive': True}
 
 
 ######################################
@@ -66,7 +67,7 @@ def generate_choropleth(data):
                            )
     figure.update_geos(fitbounds="locations", visible=False)
     figure.update_layout(geo=dict(bgcolor='rgba(0,0,0,0)'), font=dict(color="black", size=15), showlegend=False)
-    figure.update_layout(margin={"r": 0, "t": 25, "l": 0, "b": 0}, width=600,
+    figure.update_layout(margin={"r": 0, "t": 25, "l": 0, "b": 0}, width=600, autosize=True,
                          height=500, plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)')
     return figure
 
@@ -96,10 +97,11 @@ def generate_region_graph(region):
                     x=[region_data['Totalt_antal_fall'].values[0], region_data['Fall_per_100000_inv'].values[0],
                        region_data['Totalt_antal_intensivvårdade'].values[0],
                        region_data['Totalt_antal_avlidna'].values[0]], orientation='h', template=plotly_template
+
                     )
-    figure.update_layout(title=" ", xaxis_title=" ", yaxis_title=" ", width=960,
+    figure.update_layout(title=" ", xaxis_title=" ", yaxis_title=" ", width=1024,
                          height=500, plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)',
-                         font=dict(size=14))
+                         font=dict(size=20), autosize=True)
     figure.update_traces(marker_color=['red'] * 4, showlegend=False)
     return figure
 
@@ -122,8 +124,8 @@ def create_layout():
             html.Div([
                 html.Div([
                     html.H3("Avlidna"),
-                    dcc.Graph(figure=generate_choropleth("Totalt_antal_avlidna"), style=choropleth_style,
-                              config=config),
+                    dcc.Graph(figure=generate_choropleth("Totalt_antal_avlidna"),
+                              style=choropleth_style, config=config),
                 ], className="six columns"),
 
                 html.Div([
@@ -149,16 +151,18 @@ def create_layout():
             # dcc.RangeSlider(marks=df_total_per_region["Region"].to_dict()),
             # dcc.Dropdown(options=make_dropdown(df_total_per_region["Region"]), multi=True),
             html.Div([
+                html.Div([
                 html.H3("Välj region för detaljerad statistik"),
                 dcc.Dropdown(id="region_input", options=make_dropdown(df_total_per_region["Region"]), value="Stockholm",
                              clearable=False,
-                             style={'color': colors["text"], 'height': '35px', 'width': '250px', 'margin': '0 auto'}),
+                             style={'color': colors["text"], 'height': '50', 'width': '250px', 'margin': '0 auto', 'font-size': '18px'}),
+            ], className="text-top"),
                 dcc.Graph(id="region_output", figure=generate_region_graph("Stockholm"), config=config,
-                          style={'margin': '0 auto'})
+                          style={'margin': '0 auto'}, className="region-graph")
             ], className="container"),
-            html.Footer(children=info, style={'margin': 'left 100px right 100px', 'font-size': '11px'},
+            html.Footer(children=info, style={'margin': 'left 100px right 100px', 'font-size': '16px'},
                         className="bottom-text")
-        ], className="container", style={"max-width": "2000"})
+        ], className="container", )
     ], style=style)
 
 
@@ -180,11 +184,10 @@ def update_region_figure(selected_region):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    app.run_server(debug=True)
 
     # todo add multiple regions to chart, group by region
     # todo fix styling
-    # todo change graph size instead of overlap when windows width is reduced
     # todo dark mode
     # todo timeline
     # todo tables
