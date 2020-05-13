@@ -47,7 +47,7 @@
 
 .region-graph{
   text-align: center;
-  max-Width: 1280px;
+
 }
 
 
@@ -159,7 +159,9 @@
 html is set to 62.5% so that all the REM measurements throughout Skeleton
 are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  background-color: #ffd8ab;
+}
 body {
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
@@ -447,7 +449,7 @@ there.
 /* Larger than desktop */
 @media (min-width: 1024px) {
     body{
-        zoom: 75%;
+
     }
 }
 
@@ -456,14 +458,12 @@ there.
 
 
 @media screen and (max-width: 1024px){
-  html {
-    background-color: #ffd8ab;
-  }
+
   h1{
     padding-top: 100px;
   }
     body {
-       zoom: 50%;
+
         font-size: 125%;
         width: 100%;
         margin-right: 0;
@@ -475,7 +475,6 @@ there.
 
 @media screen and (max-width: 640px) {
     body  {
-        zoom: 40%;
         font-size: 150%;
         margin-right: 0;
         margin-left: 0;
