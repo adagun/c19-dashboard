@@ -53,9 +53,8 @@ with open(r'data/sweden.geojson') as f:
 # Graphs config
 ######################################
 config = {'displaylogo': False, "displayModeBar": False, "scrollZoom": False,
-          'locale': 'se'}
+          'locale': 'se', 'staticPlot': False}
 
-hover_name="Test"
 ######################################
 # generate_choropleth
 ######################################
@@ -70,7 +69,6 @@ def generate_choropleth(data):
     figure.update_layout(geo=dict(bgcolor='rgba(0,0,0,0)'), font=dict(color="black", size=15), showlegend=True)
     figure.update_layout(margin={"r": 0, "t": 25, "l": 0, "b": 0}, autosize=True,
                          plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)')
-
     return figure
 
 
@@ -102,7 +100,7 @@ def generate_region_graph(region):
                     )
     figure.update_layout(title=" ", xaxis_title=" ", yaxis_title=" ", autosize=True,
                           plot_bgcolor='rgba(0, 0, 0, 0)', paper_bgcolor='rgba(0, 0, 0, 0)',
-                         font=dict(size=20))
+                         font=dict(size=15))
     figure.update_traces(marker_color=['red'] * 4, showlegend=False)
     return figure
 
@@ -156,12 +154,12 @@ def create_layout():
                 html.H3("Välj region för detaljerad statistik"),
                 dcc.Dropdown(id="region_input", options=make_dropdown(df_total_per_region["Region"]), value="Stockholm",
                              clearable=False,
-                             style={'color': colors["text"], 'height': '50', 'width': '400px', 'margin': '0 auto', 'font-size': '24px'}),
+                             className="region-dropdown")
             ], className="text-top"),
                 dcc.Graph(id="region_output", figure=generate_region_graph("Stockholm"), config=config,
                           style={'margin': '0 auto'}, className="region-graph")
             ], className="container"),
-            html.Footer(children=info, style={'margin': 'left 100px right 100px top 300px', 'font-size': '16px'},
+            html.Footer(children=info, style={'margin': 'left 100px right 100px top 300px', 'font-size': '11px'},
                         className="bottom-text")
         ], className="container", )
     ], style=style)
@@ -195,4 +193,4 @@ if __name__ == '__main__':
     # todo related news
     # todo age groups
     # todo drag mode
-    # todo hover text doesn't show anymore
+    # reduce size

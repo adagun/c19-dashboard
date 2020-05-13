@@ -40,6 +40,14 @@
 #############################################################################################
 */
 
+
+.region-dropdown{
+  height: 50px;
+  width: 300px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
  .bottom-text {
   margin-left: 75px;
   margin-right: 75px;
@@ -47,7 +55,8 @@
 
 .region-graph{
   text-align: center;
-
+  width: 125%;
+  margin-left: -100px;
 }
 
 
@@ -60,7 +69,7 @@
    margin-bottom: 10px;
    padding-top: 10px;
    padding-bottom: 10px;
-   width: 800px;
+   width: 600px;
    border-radius: 25px;
    text-align: center;
    display: block;
@@ -179,9 +188,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 300; }
-h1 { font-size: 4.5rem; line-height: 1.2;  letter-spacing: -.1rem; margin-bottom: 2rem; padding-bottom: 100px; padding-top: 50px}
+h1 { font-size: 4rem; line-height: 1.2;  letter-spacing: -.1rem; margin-bottom: 2rem; padding-bottom: 25px; }
 h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; margin-bottom: 1.8rem; margin-top: 1.8rem;}
-h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; margin-bottom: 1.5rem; margin-top: 1.5rem;}
+h3 { font-size: 2rem; line-height: 1.3;  letter-spacing: -.1rem; margin-bottom: 1.1rem; margin-top: 1.3rem;}
 h4 { font-size: 2.6rem; line-height: 1.35; letter-spacing: -.08rem; margin-bottom: 1.2rem; margin-top: 1.2rem;}
 h5 { font-size: 2.2rem; line-height: 1.5;  letter-spacing: -.05rem; margin-bottom: 0.6rem; margin-top: 0.6rem;}
 h6 { font-size: 2.0rem; line-height: 1.6;  letter-spacing: 0; margin-bottom: 0.75rem; margin-top: 0.75rem;}
@@ -471,24 +480,86 @@ there.
 
     }
 
+    .container {
+      margin: 0;
+    }
+    .region-dropdown{
+  height: 50px;
+  width: 300px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+ .bottom-text {
+  margin-left: 75px;
+  margin-right: 75px;
+ }
+
+.region-graph{
+  text-align: center;
+
+}
+
+ .text-top {
+   background-color: #fff0df;
+   margin: 0 auto;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   width: 600px;
+   border-radius: 25px;
+   text-align: center;
+   display: block;
+ }
+
+
 }
 
 @media screen and (max-width: 640px) {
     body  {
-        font-size: 150%;
+        font-size: 100%;
         margin-right: 0;
         margin-left: 0;
         width: 100%;
 
     }
-
+  .container {
+    margin: 0;
+  }
     footer{
-        height: 300px;
         background-color: #ffd8ab;
-
-
     }
     .container {
       margin: 0;
     }
+    .region-dropdown{
+  height: 50px;
+  width: 300px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+ .bottom-text {
+  margin-left: 75px;
+  margin-right: 75px;
+ }
+.region-graph{
+  text-align: center;
+}
+
+/* text-top
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ .text-top {
+   background-color: #fff0df;
+   margin: 0 auto;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   width: 600px;
+   border-radius: 25px;
+   text-align: center;
+   display: block;
+ }
+
 }
