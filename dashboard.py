@@ -52,7 +52,7 @@ with open(r'data/sweden.geojson') as f:
 # Graphs config
 ######################################
 config = {'displaylogo': False, "displayModeBar": False, "scrollZoom": False,
-          'locale': 'se', 'responsive': True, 'staticPlot': True}
+          'locale': 'se', 'responsive': True, 'staticPlot': False}
 
 
 ######################################
