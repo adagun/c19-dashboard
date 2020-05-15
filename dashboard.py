@@ -153,7 +153,7 @@ def create_layout():
                 html.Div([
                 html.H3("Välj region för detaljerad statistik"),
                 dcc.Dropdown(id="region_input", options=make_dropdown(df_total_per_region["Region"]), value="Stockholm",
-                             clearable=False,
+                             clearable=False, searchable=False,
                              className="region-dropdown")
             ], className="text-top"),
                 dcc.Graph(id="region_output", figure=generate_region_graph("Stockholm"), config=config,
