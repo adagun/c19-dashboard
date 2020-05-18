@@ -185,12 +185,10 @@ def update_region_figure(selected_region):
 if __name__ == '__main__':
     app.run_server(debug=True)
 
-    # todo add multiple regions to chart, group by region
+    # todo add multiple regions to chart, group by data
     # todo fix styling
     # todo dark mode
     # todo timeline
     # todo tables
     # todo related news
     # todo age groups
-    # todo drag mode
-    # reduce size
