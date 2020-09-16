@@ -155,13 +155,13 @@ def create_layout():
                 dcc.Dropdown(id="region_input", options=make_dropdown(df_total_per_region["Region"]), value="Stockholm",
                              clearable=False, searchable=False,
                              className="region-dropdown")
-            ], className="text-top"),
+            ], className="text-top", id="region-select"),
                 dcc.Graph(id="region_output", figure=generate_region_graph("Stockholm"), config=config,
                           style={'margin': '0 auto'}, className="region-graph")
             ], className="container"),
             html.Footer(children=info, style={'margin': 'left 100px right 100px top 300px', 'font-size': '11px'},
                         className="bottom-text")
-        ], className="container", )
+        ], className="container")
     ], style=style)
 
 

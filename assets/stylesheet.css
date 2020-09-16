@@ -468,6 +468,7 @@ there.
 
 @media screen and (max-width: 1024px){
 
+
   h1{
     padding-top: 100px;
   }
@@ -513,6 +514,11 @@ there.
    display: block;
  }
 
+ #region-select{
+   margin-left: 50px;
+   margin-top: 50px;
+   margin-bottom: -50px;
+ }
 
 }
 
